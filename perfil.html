@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Caronas Solidárias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <main class="profile-page">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="avatar">
+                        <img src="images/user-placeholder.jpg" alt="Foto do perfil">
+                        <button class="btn-edit-avatar"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="details">
+                        <h1>João da Silva</h1>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="average">4.5</span>
+                            <span class="reviews">(32 avaliações)</span>
+                        </div>
+                        <p class="member-since">Membro desde: Janeiro 2023</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-primary" id="editProfileBtn">
+                        <i class="fas fa-edit"></i> Editar Perfil
+                    </button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <nav class="profile-tabs">
+                    <div class="nav nav-tabs" id="profileTabs" role="tablist">
+                        <button class="nav-link active" id="rides-tab" data-bs-toggle="tab" data-bs-target="#rides" type="button" role="tab">Minhas Caronas</button>
+                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Avaliações</button>
+                        <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab">Configurações</button>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="profileTabsContent">
+                    <!-- Rides Tab -->
+                    <div class="tab-pane fade show active" id="rides" role="tabpanel">
+                        <div class="rides-tabs">
+                            <ul class="nav nav-pills mb-3" id="ridesTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="given-tab" data-bs-toggle="pill" data-bs-target="#given" type="button">Oferecidas</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="taken-tab" data-bs-toggle="pill" data-bs-target="#taken" type="button">Recebidas</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="ridesTabsContent">
+                                <div class="tab-pane fade show active" id="given" role="tabpanel">
+                                    <div class="rides-list">
+                                        <!-- Given rides will be loaded here -->
+                                        <div class="empty-state">
+                                            <i class="fas fa-car"></i>
+                                            <p>Você ainda não ofereceu nenhuma carona</p>
+                                            <a href="oferecer.html" class="btn btn-primary">Oferecer Carona</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="taken" role="tabpanel">
+                                    <div class="rides-list">
+                                        <!-- Taken rides will be loaded here -->
+                                        <div class="empty-state">
+                                            <i class="fas fa-users"></i>
+                                            <p>Você ainda não pegou nenhuma carona</p>
+                                            <a href="buscar.html" class="btn btn-primary">Buscar Caronas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <div class="reviews-list">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <img src="images/user-placeholder.jpg" alt="Maria Souza">
+                                        <div>
+                                            <h4>Maria Souza</h4>
+                                            <div class="rating">★★★★★</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-date">15/08/2023</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Ótimo motorista! Pontual e o carro muito confortável. Recomendo!</p>
+                                </div>
+                            </div>
+                            <!-- More reviews would be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div class="tab-pane fade" id="settings" role="tabpanel">
+                        <form class="settings-form">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" value="joao.silva@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="phone" value="(11) 98765-4321">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Alterar Senha</label>
+                                <input type="password" class="form-control" id="password" placeholder="Nova senha">
+                            </div>
+                            <div class="mb-3">
+                                <label for="notifications" class="form-label">Notificações</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="notifications" checked>
+                                    <label class="form-check-label" for="notifications">Receber notificações por email</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
