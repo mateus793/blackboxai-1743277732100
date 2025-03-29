@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Caronas | Caronas Solidárias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <main class="search-page">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Column -->
+                <div class="col-md-3 filters">
+                    <h3>Filtrar</h3>
+                    <div class="filter-group">
+                        <h4>Data</h4>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="filter-group">
+                        <h4>Preço</h4>
+                        <div class="price-range">
+                            <input type="range" class="form-range" min="0" max="200" step="10" value="100">
+                            <span class="price-value">Até R$ 100,00</span>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Tipo de Veículo</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vehicle1" checked>
+                            <label class="form-check-label" for="vehicle1">Comum</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vehicle2">
+                            <label class="form-check-label" for="vehicle2">Luxo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vehicle3">
+                            <label class="form-check-label" for="vehicle3">Elétrico</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-100">Aplicar Filtros</button>
+                </div>
+
+                <!-- Results Column -->
+                <div class="col-md-9 results">
+                    <div class="search-header">
+                        <h2>Caronas disponíveis</h2>
+                        <div class="sort-options">
+                            <select class="form-select">
+                                <option>Ordenar por: Mais relevantes</option>
+                                <option>Mais baratas</option>
+                                <option>Mais próximas</option>
+                                <option>Melhor avaliação</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rides-list">
+                        <!-- Ride cards will be loaded here via JavaScript -->
+                    </div>
+
+                    <div class="map-container">
+                        <div id="map" style="height: 400px; background-color: #eee; border-radius: 8px;">
+                            <!-- Map will be loaded here -->
+                            <p class="text-center py-5">Mapa de caronas disponíveis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
